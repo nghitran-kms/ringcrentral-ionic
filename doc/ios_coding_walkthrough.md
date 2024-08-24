@@ -91,7 +91,7 @@ The system tracks and manages remote video events, including:
 - `onUserLeave`: Removes the remote user's video when they leave the meeting.
 
 ### Remote Video Setup:
-A RCVideoCanvas is created when initializing a RemoteVideoView with a user ID. This triggers RcvVideoController.setupRemoteVideo(:RcvVideoCanvas) to complete the remote video setup.
+A `RCVideoCanvas` is created when initializing a `RemoteVideoView` with a user ID. This triggers `RcvVideoController.setupRemoteVideo(:RcvVideoCanvas)` to complete the remote video setup.
 
 ### Managing the Display of Remote Videos:
 
