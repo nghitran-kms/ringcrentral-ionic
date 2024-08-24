@@ -24,11 +24,11 @@ class RemoteVideoView: UIView {
     
     // MARK: - Setup UI
     private func setupViews() {
-        setupCanvasVdieo()
+        setupCanvasVideo()
         setupUI()
     }
 
-    private func setupCanvasVdieo() {
+    private func setupCanvasVideo() {
         /* Attach video canvas to view */
         let canvas = RCVideoCanvas(view: nil, uid: uuid)
         

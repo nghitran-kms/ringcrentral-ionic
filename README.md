@@ -1,120 +1,59 @@
-# RingCentral Ionic Integration
+<div align="center">
+    <h3 align="center">RingCentral Ionic Integration Sample</h3>
+    <p align="center">A sample repository for integrating the native RingCentral SDK with Ionic React.</p>
+</div>
 
-This is a sample repo for integrate native RingCentral SDK in Ionic React
+<!-- USAGE INSTRUCTIONS -->
 
-## Running Guied
+## Usage Instructions
 
-### Perquisite
+### Prerequisites
 
-1. Update necessary credentials in file [.env](/.env)
-1. In root folder, Run `npm install`
-1. Then Run `ionic cap sync`
+1. Update the necessary credentials in the [.env](/.env) file.
+2. In the root folder, Run
+   ```sh
+   npm install
+   ionic cap sync
+   ```
 
-### Run ios app
+### Build app on iOS simulator
 
-3. Go to ios App folder: `cd ios/app`
-4. Run: `pod install`
-5. `cd ../..`
-6. `npm run ios`
+3. Install RingCentral Native SDK for iOS but running these commands:
+    ```sh
+    # Go to 'ios/app' folder
+    cd ios/app
 
-# Integration process
+    # Install all pod library in Podfile
+    pod install
+    ```
+4. Go back to root folder then run these commands:
+   ```sh
+   # Go back to root folder
+   cd ../..
 
-## General setup
+   # Serve ionic app to ios simulator
+   npm run ios
 
-1. Setup Custom Native Code follow Ionic Official Document
-   1. ios: https://capacitorjs.com/docs/ios/custom-code
-   2. Android: https://capacitorjs.com/docs/android/custom-code
-2. Create 2 functions
-   1. `initRingCentral`: Setup RingCentral credential
-   2. `joinMeeting`: Join meeting with meeting id
+   ```
 
-## Setup iOS with RingCentral
+### How to use
 
-1. Install Ringcentral-Video-SDK, in Podfile add: `pod 'Ringcentral-Video-SDK', '0.14.4'`
+5. Enter your username and an existing meeting ID. 
+6. Tap the 'Join Meeting' button to open the meeting.
 
-```
-   # Podfile
-   target 'App' do
-  capacitor_pods
-  # Add your Pods here
-   pod 'Ringcentral-Video-SDK', '0.14.4'
-   end
+### Preview
+1. Enter meeting ID
+<div align="center">
+    <img src="doc/images/demo.png" alt="Alt text" height="500">
+</div>
 
-   post_install do |installer|
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-  end
-  assertDeploymentTarget(installer)
-end
-```
+2. Active meeting
+<div align="center">
+    <img src="doc/images/demo_active_meeting.png" alt="Alt text" height="500">
+</div>
 
-2. Run `pod install` in ios/app to install Ringcentral-Video-SDK
-3. Exclude architect: arm64 in
-   ![Exclude architect: arm64](.github/images/excluded_architectures.png)
-4. Add RingCentral to Frameworks, Libraries, and Embedded Content
+## Integration Overview
+Please refer this the document for more detail: [RingCentral Integration Overview](./doc/integration_guide.md)
 
-![Exclude architect: arm64](.github/images/add_libraries.png)
-
-5. Create plugin method `initRingCentral`
-
-```swift
-    @objc public func initRingCentral(_ call: CAPPluginCall) {
-        DispatchQueue.main.async{
-            guard let clientId = call.getString("clientId") else {
-                call.reject("Missing Client ID")
-                return
-            }
-
-            guard let clientSecret = call.getString("clientSecret") else {
-                call.reject("Missing Client Secret")
-                return
-            }
-
-            RcvEngine.create(clientId, clientSecret: clientSecret, isShareUsageData: false)
-
-            print("debug -\(#function)")
-
-            call.resolve(["status": "RingCentral initialized"])
-        }
-
-    }
-```
-
-1. Call `initRingCentral` when app load. For this sample code, it will be called in [Home.tsx](src/pages/Home.tsx)
-2. Create plugin method `joinMeeting`
-
-```swift
-     @objc public func joinMeeting(_ call: CAPPluginCall) {
-        DispatchQueue.main.async {
-            guard let meetingId = call.getString("meetingId") else {
-                call.reject("Missing meetingId")
-                return
-            }
-
-            guard let apptEndTime = call.getDate("apptEndTime") else {
-                call.reject("Missing meetingId")
-                return
-            }
-
-            guard let userName = call.getString("userName") else {
-                call.reject("Missing username")
-                return
-            }
-
-            print("debug -\(#function): \(meetingId)")
-
-            let meetingVC = MeettingViewController(meetingId, apptEndTime, userName)
-            meetingVC.modalPresentationStyle = .overFullScreen
-            meetingVC.onDismiss = { manualLeave in
-                call.resolve([ "isManualLeave": manualLeave ])
-            }
-            meetingVC.onError = { message in
-                call.reject(message)
-            }
-            self.bridge?.viewController?.presentFromRight(meetingVC)
-        }
-    }
-```
-
-3. Check [InputForm.tsx](src/pages/InputForm.tsx) for how to use `joinMeeting`
-# ringcrentral-ionic
+## Code Walkthrough
+- iOS: [RingCentral Ionic Integration Code Walkthrough for iOS](./doc/ios_coding_walkthrough.md)

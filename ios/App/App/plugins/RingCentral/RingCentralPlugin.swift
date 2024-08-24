@@ -51,7 +51,7 @@ public class RingCentralPlugin: CAPPlugin, CAPBridgedPlugin {
             
             print("debug -\(#function): \(meetingId)")
             
-            let meetingVC = MeettingViewController(meetingId, apptEndTime, userName)
+            let meetingVC = MeetingViewController(meetingId, apptEndTime, userName)
             meetingVC.modalPresentationStyle = .overFullScreen
             meetingVC.onDismiss = { manualLeave in
                 call.resolve([ "isManualLeave": manualLeave ])

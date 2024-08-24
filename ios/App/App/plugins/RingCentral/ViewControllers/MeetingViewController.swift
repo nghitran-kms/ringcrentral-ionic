@@ -3,7 +3,7 @@ import AVKit
 import rcvsdk
 import CallKit
 
-class MeettingViewController: UIViewController {
+class MeetingViewController: UIViewController {
     // MARK: - Properties
     private let meetingId: String
     private let apptEndTime: Date
@@ -259,7 +259,7 @@ class MeettingViewController: UIViewController {
     }
 }
 
-extension MeettingViewController: RcvEngineEventHandler {
+extension MeetingViewController: RcvEngineEventHandler {
     func onAuthorization(_ newTokenJsonStr: String) {}
     
     func onAuthorizationError(_ errorCode: Int64) {}
@@ -352,7 +352,7 @@ extension MeettingViewController: RcvEngineEventHandler {
     }
 }
 
-extension MeettingViewController: RcvMeetingUserEventHandler {
+extension MeetingViewController: RcvMeetingUserEventHandler {
     func onLocalDialStateChanged(_ id: String, callerId: String, number: String, status: RcvCallPhoneStatus, deleted: Bool) {}
     
     func onCallOut(_ id: String, errorCode: Int64) {}
@@ -415,7 +415,7 @@ extension MeettingViewController: RcvMeetingUserEventHandler {
     }
 }
 
-extension MeettingViewController: RcvVideoEventHandler {
+extension MeetingViewController: RcvVideoEventHandler {
     func onLocalVideoMuteChanged(_ muted: Bool) {
         let video = meetingView.localVideoView
         if muted {
@@ -451,7 +451,7 @@ extension MeettingViewController: RcvVideoEventHandler {
     }
 }
 
-extension MeettingViewController: RcvAudioEventHandler {
+extension MeetingViewController: RcvAudioEventHandler {
     func onLocalAudioStreamStateChanged(_ state: RcvLocalAudioStreamState, error: RcvLocalAudioError) {
     }
     
@@ -468,7 +468,7 @@ extension MeettingViewController: RcvAudioEventHandler {
     }
 }
 
-extension MeettingViewController: RcvMeetingStatisticEventHandler {
+extension MeetingViewController: RcvMeetingStatisticEventHandler {
     func onLocalAudioStats(_ stats: RcvLocalAudioStats?) {
         return
     }
@@ -486,7 +486,7 @@ extension MeettingViewController: RcvMeetingStatisticEventHandler {
     }
 }
 
-extension MeettingViewController: RcvMeetingEventHandler {
+extension MeetingViewController: RcvMeetingEventHandler {
     func onLiveTranscriptionDataChanged(_ data: RcvLiveTranscriptionData?, type: RcvLiveTranscriptionDataType) {
         return
     }
@@ -541,7 +541,7 @@ extension MeettingViewController: RcvMeetingEventHandler {
 }
 
 // MARK: - CXCallObserverDelegate
-extension MeettingViewController: CXCallObserverDelegate {
+extension MeetingViewController: CXCallObserverDelegate {
     func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
         if !call.hasEnded && !call.isOutgoing && call.hasConnected && !call.isOnHold {
             // Handle incoming call connected

@@ -34,7 +34,7 @@
 		AE2A003D2C7954FC00F16BB3 /* MeetingStatisticEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A001A2C7954FC00F16BB3 /* MeetingStatisticEventHandler.swift */; };
 		AE2A003E2C7954FC00F16BB3 /* MeetingUserEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A001B2C7954FC00F16BB3 /* MeetingUserEventHandler.swift */; };
 		AE2A003F2C7954FC00F16BB3 /* VideoEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A001C2C7954FC00F16BB3 /* VideoEventHandler.swift */; };
-		AE2A00402C7954FC00F16BB3 /* MeettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A001F2C7954FC00F16BB3 /* MeettingViewController.swift */; };
+		AE2A00402C7954FC00F16BB3 /* MeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A001F2C7954FC00F16BB3 /* MeetingViewController.swift */; };
 		AE2A00412C7954FC00F16BB3 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A00212C7954FC00F16BB3 /* CircleButton.swift */; };
 		AE2A00422C7954FC00F16BB3 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A00222C7954FC00F16BB3 /* CustomLabel.swift */; };
 		AE2A00432C7954FC00F16BB3 /* EndMeetingAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A00232C7954FC00F16BB3 /* EndMeetingAlarm.swift */; };
@@ -90,7 +90,7 @@
 		AE2A001A2C7954FC00F16BB3 /* MeetingStatisticEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingStatisticEventHandler.swift; sourceTree = "<group>"; };
 		AE2A001B2C7954FC00F16BB3 /* MeetingUserEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingUserEventHandler.swift; sourceTree = "<group>"; };
 		AE2A001C2C7954FC00F16BB3 /* VideoEventHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEventHandler.swift; sourceTree = "<group>"; };
-		AE2A001F2C7954FC00F16BB3 /* MeettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeettingViewController.swift; sourceTree = "<group>"; };
+		AE2A001F2C7954FC00F16BB3 /* MeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingViewController.swift; sourceTree = "<group>"; };
 		AE2A00212C7954FC00F16BB3 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		AE2A00222C7954FC00F16BB3 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		AE2A00232C7954FC00F16BB3 /* EndMeetingAlarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndMeetingAlarm.swift; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		AE2A00202C7954FC00F16BB3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				AE2A001F2C7954FC00F16BB3 /* MeettingViewController.swift */,
+				AE2A001F2C7954FC00F16BB3 /* MeetingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE2A00402C7954FC00F16BB3 /* MeettingViewController.swift in Sources */,
+				AE2A00402C7954FC00F16BB3 /* MeetingViewController.swift in Sources */,
 				AE2A004A2C7954FC00F16BB3 /* WaitingView.swift in Sources */,
 				AE2A00442C7954FC00F16BB3 /* FullScreenGradientView.swift in Sources */,
 				AE2A003C2C7954FC00F16BB3 /* MeetingEventHandler.swift in Sources */,
