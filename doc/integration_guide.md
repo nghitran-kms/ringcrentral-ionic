@@ -8,6 +8,9 @@
 To integrate the RingCentral Native SDK with Ionic, we follow its guidelines to run native code by implementing a **custom plugin for both iOS and Android**. 
 In summary, you'll create a custom plugin with a `joinMeeting` method that `opens a native view to handle the RingCentral meeting functionality`.
 
+- [Custom Native iOS Code](https://capacitorjs.com/docs/ios/custom-code)
+- [Custom Native Android Code](https://capacitorjs.com/docs/android/custom-code)
+
 ## Setup RingCentral with Ionic iOS
 
 ### Configure project
