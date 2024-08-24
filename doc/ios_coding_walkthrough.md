@@ -1,9 +1,10 @@
 <div align="center">
     <h3>RingCentral Ionic Integration Code Walkthrough for iOS</h3>
     <p>A detailed explanation of how RingCentral is used in iOS</p>
+    <p>This document focuses on the primary aspects of integrating the RingCentral Native iOS SDK.</p>
 </div>
 
-This document focuses on the primary aspects of integrating the RingCentral Native iOS SDK.
+
 
 ## [RingCentralPlugin.swift](../ios/App/App/plugins/RingCentral/RingCentralPlugin.swift)
 
